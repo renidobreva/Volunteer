@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Проекти";
+}
+
+<h1>Проекти</h1>
+
+<a href="/Projects/Create" class="btn btn-primary">Добави проект</a>
+
+<table class="table table-bordered mt-3">
+    <thead>
+        <tr>
+            <th>Име на проект</th>
+            <th>Описание</th>
+            <th>Действия</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var project in Model)
+        {
+            <tr>
+                <td>@project.Name</td>
+                <td>@project.Description</td>
+                <td>
+                    <a href="/Projects/Edit/@project.Id" class="btn btn-warning">Редактирай</a>
+                    <a href="/Projects/Delete/@project.Id" class="btn btn-danger">Изтрий</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

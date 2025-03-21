@@ -1,0 +1,57 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Система за управление на доброволци</title>
+
+    <!-- Включване на Bootstrap CSS -->
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <!-- Навигационна лента -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="/">Система за управление на доброволци</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Начало</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Account/Login">Вход</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Projects/Index">Проекти</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Participants/Index">Участници</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Users/Index">Потребители</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Основното съдържание на страницата -->
+        <div class="row">
+            <div class="col-12">
+                @RenderBody() <!-- Тук ще се зареждат съдържанията на конкретните изгледи -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Включване на Bootstrap JS и зависимости -->
+    <script src="~/js/jquery-3.6.0.min.js"></script> <!-- Включи jQuery -->
+    <script src="~/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
